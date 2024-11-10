@@ -1,0 +1,32 @@
+<!-- listar-series.component.html -->
+<div *ngIf="series.length > 0; else noData">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre de la Serie</th>
+          <th>Canal</th>
+          <th>Temporadas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let serie of series; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ serie.name }}</td>
+          <td>{{ serie.channel }}</td>
+          <td>{{ serie.seasons }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Promedio de temporadas -->
+    <div class="promedio">
+      <p><strong>Promedio de temporadas: {{ promedioTemporadas | number: '1.0-2' }}</strong></p>
+    </div>
+  
+  </div>
+  
+  <ng-template #noData>
+    <p>No se encontraron series.</p>
+  </ng-template>
+  
