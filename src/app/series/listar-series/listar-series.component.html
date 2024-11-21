@@ -1,5 +1,6 @@
-<!-- listar-series.component.html -->
-<div *ngIf="series.length > 0; else noData">
+<div class="container">
+  <!-- Tabla de series -->
+  <div class="tabla-series">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -10,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let serie of series; let i = index">
+        <tr *ngFor="let serie of series; let i = index" (click)="onSelectSerie(serie)" class="clickable">
           <td>{{ i + 1 }}</td>
           <td>{{ serie.name }}</td>
           <td>{{ serie.channel }}</td>
@@ -18,15 +19,19 @@
         </tr>
       </tbody>
     </table>
-  
+
     <!-- Promedio de temporadas -->
     <div class="promedio">
       <p><strong>Promedio de temporadas: {{ promedioTemporadas | number: '1.0-2' }}</strong></p>
     </div>
-  
   </div>
-  
-  <ng-template #noData>
-    <p>No se encontraron series.</p>
-  </ng-template>
-  
+
+  <!-- Detalle de la serie -->
+  <div class="detalle-serie">
+    <app-detalle-serie [serie]="serieSeleccionada"></app-detalle-serie>
+  </div>
+</div>
+
+<ng-template #noData>
+  <p>No se encontraron series.</p>
+</ng-template>

@@ -16,4 +16,8 @@ export class SeriesService {
   getSeries(): Observable<Serie[]> {
     return this.http.get<Serie[]>(this.apiUrl);
   }
+
+  getSerie(id: number): Observable<Serie> {
+    return this.http.get<Serie>(`${this.apiUrl}/${id}`);
+  }
 }

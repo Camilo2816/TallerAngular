@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SeriesService } from '../series.service';
+import { Serie } from '../series';
 
 @Component({
   selector: 'app-listar-series',
@@ -10,7 +11,7 @@ export class ListarSeriesComponent implements OnInit {
 
   series: any[] = [];
   promedioTemporadas: number = 0; 
-
+  serieSeleccionada: Serie | null = null;
   constructor(private seriesService: SeriesService) { }
 
   ngOnInit(): void {
@@ -35,5 +36,11 @@ export class ListarSeriesComponent implements OnInit {
     this.promedioTemporadas = totalTemporadas / this.series.length;
     
   }
+
+
+  onSelectSerie(serie: Serie): void {
+    this.serieSeleccionada = serie; 
+  }
+
   
 }

@@ -1,53 +1,60 @@
-table {
-    width: 80%; /* Ajusta el ancho de la tabla al 80% del contenedor */
-    margin: 30px auto; /* Centra la tabla horizontalmente y agrega un margen arriba y abajo */
-    border-collapse: collapse; 
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tabla */
-  }
-  
-  th, td {
-    padding: 15px; /* Aumenta el padding para dar más espacio */
-    text-align: center; /* Centra el texto en las celdas */
-    font-family: 'Arial', sans-serif; /* Fuente más moderna */
-  }
-  
-  th {
-    background-color: #4CAF50; /* Un color verde agradable para los encabezados */
-    color: white; /* Texto blanco para los encabezados */
-    font-size: 16px; /* Tamaño de fuente para encabezados */
-  }
-  
-  td {
-    background-color: #fff; /* Fondo blanco para las celdas */
-    color: #333; /* Color del texto */
-    font-size: 14px; /* Tamaño de fuente para las celdas */
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2; /* Fondo gris claro para las filas pares */
-  }
-  
-  tr:hover {
-    background-color: #e0e0e0; /* Fondo gris más oscuro al pasar el mouse */
-  }
-  
-  tr:last-child td {
-    border-bottom: none; /* Elimina el borde inferior de la última fila */
-  }
-  
-  td, th {
-    border: 1px solid #ddd; /* Bordes suaves para las celdas */
-  }
-  
-  .promedio {
-    margin-top: -50px; /* Reduce el espacio entre la tabla y el promedio */
-    margin-left: 180px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left; /* Alinea el texto a la izquierda */
-    padding: 10px;
-    border-radius: -10px;
-    width: auto; /* Asegura que se ajuste al contenido */
-  }
-  
+/* Contenedor principal */
+.container {
+  display: flex; /* Flexbox para disposición horizontal */
+  justify-content: space-between; /* Espacio entre la tabla y el detalle */
+  align-items: flex-start; /* Alineación superior de ambos elementos */
+  gap: 20px; /* Espacio entre la tabla y el cuadro */
+  padding: 20px; /* Espaciado interno general */
+  background-color: #f5f5f5; /* Fondo suave */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Tabla de series */
+.table {
+  width: 100%; /* Tabla ocupa todo el espacio del contenedor */
+  border-collapse: collapse; /* Bordes colapsados */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Evitar que bordes sobresalgan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.table th {
+  background-color: #4CAF50; /* Fondo verde */
+  color: white; /* Texto blanco */
+  text-align: left; /* Alineación izquierda */
+  padding: 12px; /* Espaciado interno */
+}
+
+.table td {
+  padding: 10px; /* Espaciado interno */
+  text-align: left; /* Alineación izquierda */
+  border-bottom: 1px solid #ddd; /* Línea inferior */
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Fondo alterno */
+}
+
+.table tr:hover {
+  background-color: #ddd; /* Resaltar al pasar el cursor */
+  cursor: pointer; /* Cursor de mano */
+}
+
+/* Promedio */
+.promedio {
+  margin-top: 10px; /* Separación con la tabla */
+  font-size: 16px; /* Tamaño de texto */
+  color: #333; /* Color de texto */
+}
+
+/* Cuadro de detalle */
+.detalle-serie {
+  flex: 2; /* Ocupa menos espacio */
+  max-width: 30%; /* Limita el ancho del cuadro */
+  border: 1px solid #ccc; /* Borde gris claro */
+  padding: 10px; /* Espaciado interno */
+  background-color: #f9f9f9; /* Fondo claro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
